@@ -161,6 +161,71 @@
             .welcome img { box-shadow: 20px 20px 0 var(--primary); margin-bottom: 40px; }
             .pillars, .news, .footer { padding: 80px 5%; }
         }
+        header {
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 0 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo { font-family: 'Playfair Display', serif; font-weight: 700; color: var(--primary); font-size: 1.2rem; }
+
+nav { display: flex; gap: 30px; align-items: center; }
+
+.nav-item { position: relative; list-style: none; }
+
+.nav-item a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.nav-item a:hover { color: var(--secondary); }
+
+/* Dropdown Menu untuk Ekskul */
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    padding: 15px 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: 0.3s;
+}
+
+.nav-item:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px 25px;
+    font-size: 0.85rem;
+    font-weight: 400;
+}
+
+.dropdown a:hover { background: #f0f4f1; color: var(--primary); }
+
+/* Perbaikan agar Hero tidak tertutup Header di Mobile */
+@media (max-width: 992px) {
+    header { padding: 0 5%; }
+    nav { gap: 15px; }
+}
     </style>
 </head>
 <body>
@@ -170,7 +235,26 @@
         <p>Membentuk karakter, mengasah kreativitas, dan menanamkan nilai moral sejak dini di SD Negeri 2 Ngasem.</p>
         <a href="https://docs.google.com/forms/d/e/1FAIpQLScKMsyJp7BfCcJaC5SNXxpg4Jj5oYa4bk90YLTPzIOsDWiWng/viewform" class="btn-main">DAFTAR PPDB 2026</a>
     </section>
-
+<header>
+    <div class="logo">SDN 2 NGASEM</div>
+    <nav>
+        <div class="nav-item"><a href="#">Beranda</a></div>
+        <div class="nav-item">
+            <a href="#profil">Profil</a>
+        </div>
+        <div class="nav-item">
+            <a href="#ekstrakurikuler">Ekstrakurikuler ▼</a>
+            <div class="dropdown">
+                <a href="#">Pramuka (Wajib)</a>
+                <a href="#">Seni Tari</a>
+                <a href="#">Rebana/Al-Banjari</a>
+                <a href="#">Olahraga (Sepak Bola)</a>
+                <a href="#">Tahfidz Qur'an</a>
+            </div>
+        </div>
+        <div class="nav-item"><a href="#kontak">Kontak</a></div>
+    </nav>
+</header>
     <section class="welcome">
         <img src="https://drive.google.com/thumbnail?sz=w1000&id=1qppMRg385pHmeqTVz-9cCiQmN0HhjjjY" alt="Kepala Sekolah">
         <div>
