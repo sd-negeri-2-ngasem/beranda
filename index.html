@@ -279,69 +279,6 @@
             .welcome img { margin-bottom: 40px; }
             .pillars, .news, .footer { padding: 80px 5%; }
         }
-/* --- MOBILE NAVIGATION --- */
-        .menu-toggle {
-            display: none; /* Sembunyi di desktop */
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 1001;
-        }
-
-        .menu-toggle span {
-            width: 30px;
-            height: 3px;
-            background: var(--accent);
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-
-        @media (max-width: 768px) {
-            .menu-toggle { display: flex; } /* Muncul di mobile */
-
-            nav {
-                position: fixed;
-                top: 0;
-                right: -100%; /* Sembunyi di kanan luar layar */
-                width: 70%;
-                height: 100vh;
-                background: var(--secondary);
-                flex-direction: column;
-                justify-content: center;
-                padding: 50px;
-                transition: 0.5s;
-                box-shadow: -10px 0 30px rgba(0,0,0,0.2);
-            }
-
-            nav.active { right: 0; } /* Muncul saat diklik */
-
-            .nav-item a { font-size: 1.2rem; }
-
-            .dropdown {
-                position: static;
-                opacity: 1;
-                visibility: visible;
-                transform: none;
-                background: none;
-                box-shadow: none;
-                padding-left: 20px;
-                border-top: none;
-                border-left: 2px solid var(--logo-red);
-            }
-
-            .dropdown a { color: var(--white); opacity: 0.8; }
-
-            /* Animasi Hamburger jadi Silang (X) */
-            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
-
-            /* Penyesuaian Hero & Section */
-            .hero h1 { font-size: 2.2rem; }
-            .welcome { padding: 60px 5%; }
-            .welcome h2 { font-size: 2rem; }
-            .news-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
@@ -363,11 +300,6 @@
         </div>
         <div class="nav-item"><a href="https://wa.me/6285607693086" target="_blank">Kontak</a></div>
     </nav>
-<div class="menu-toggle" id="mobile-menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
 </header>
 
 <section class="hero">
@@ -436,8 +368,8 @@
         <div class="footer-col">
             <h4>Media Sosial</h4>
             <ul class="footer-links">
-                <li><a href="mailto:ngasemdua.sdn@gmail.com?subject=Tanya%20Informasi%20Sekolah&body=Halo%20Admin%20SDN%202%20Ngasem," target="_blank"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i><i class="fas fa-envelope"></i><span>ngasemdua.sdn@gmail.com</span></a></li>
-                <li><a href="https://instagram.com/sdnegeri2ngasem" target="_blank"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i><i class="fab fa-instagram"></i><span>Instagram</span></a></li>
+                <li><a href="mailto:ngasemdua.sdn@gmail.com?subject=Tanya%20Informasi%20Sekolah&body=Halo%20Admin%20SDN%202%20Ngasem," target="_blank"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Email</a></li>
+                <li><a href="https://instagram.com/sdnegeri2ngasem" target="_blank"><i class="fas fa-chevron-right" style="font-size: 0.7rem;"></i> Instagram</a></li>
             </ul>
         </div>
 
@@ -455,20 +387,6 @@
         &copy; 2026 SD Negeri 2 Ngasem. All Rights Reserved.
     </div>
 </footer>
-<script>
-    const mobileMenu = document.getElementById('mobile-menu');
-    const navMenu = document.getElementById('nav-menu');
 
-    mobileMenu.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-
-    // Menutup menu saat salah satu link diklik
-    document.querySelectorAll('.nav-item a').forEach(n => n.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
-        navMenu.classList.remove('active');
-    }));
-</script>
 </body>
 </html>
